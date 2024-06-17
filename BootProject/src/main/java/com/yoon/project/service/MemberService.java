@@ -3,16 +3,21 @@ package com.yoon.project.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.yoon.project.domain.Member;
 import com.yoon.project.repository.MemberRepository;
 import com.yoon.project.repository.MemoryMemberRepository;
 
+@Service
 public class MemberService {
 
 	//private final MemberRepository memberRepository = new MemoryMemberRepository();
 	
 	private final MemberRepository memberRepository;
 	
+	@Autowired
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
