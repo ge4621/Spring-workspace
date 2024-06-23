@@ -2,14 +2,14 @@ package com.yoon.project.domain;
 
 public class Member {
 
-	private Long Id;
+	private Long id;
 	private String name;
 	
 	public Long getId() {
-		return Id;
+		return id;
 	}
 	public void setId(Long id) {
-		Id = id;
+		id = id;
 	}
 	public String getName() {
 		return name;

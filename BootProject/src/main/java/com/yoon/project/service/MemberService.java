@@ -10,14 +10,14 @@ import com.yoon.project.domain.Member;
 import com.yoon.project.repository.MemberRepository;
 import com.yoon.project.repository.MemoryMemberRepository;
 
-@Service
+//@Service
 public class MemberService {
 
 	//private final MemberRepository memberRepository = new MemoryMemberRepository();
 	
 	private final MemberRepository memberRepository;
 	
-	@Autowired
+	//@Autowired
 	public MemberService(MemberRepository memberRepository) {
 		this.memberRepository = memberRepository;
 	}
