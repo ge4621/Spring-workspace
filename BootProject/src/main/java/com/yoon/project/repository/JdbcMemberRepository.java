@@ -39,7 +39,8 @@ public class JdbcMemberRepository implements MemberRepository {
 			rs = pstmt.getGeneratedKeys();
 			
 			if(rs.next()) {
-				member.setId(rs.getLong(1));
+				//member.setId(rs.getLong(1)); 이거 사용하면 타입 오류로 인해 db에 insert는 되지만 오류발생 (db에서 id의 타입을 number, Java에서는 Long 사용해서)
+				 member.setId(Long.parseLong(String.valueOf(rs.getLong(1)))); //인프런 커뮤니티에서 해결 방법 찾음, 일단 강의 진행에 있어 문제는 없다.
 			}else {
 				throw new SQLException("id조회실패");
 			}
@@ -50,8 +51,6 @@ public class JdbcMemberRepository implements MemberRepository {
 		}finally {
 			close(conn,pstmt,rs);
 		}
-		
-		
 		
 	}
 	private Connection getConnection() {

@@ -43,11 +43,13 @@ public class MemberService {
 	
 	
 	public Long join(Member member) {
-		
 		validateDuplicateMember(member);//중복 회원 검증
 		memberRepository.save(member);
 		return member.getId();
 	}
+	
+	
+	
 		
 	/*
 	 * 중복 회원 검증 메서드 만들기
@@ -69,7 +71,6 @@ public class MemberService {
 	public Optional<Member> findOne(Long memberId){
 		return memberRepository.findById(memberId);
 	}
-	
 		
 	}
 	
