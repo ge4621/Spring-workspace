@@ -5,12 +5,14 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.yoon.project.domain.Member;
 import com.yoon.project.repository.MemberRepository;
 import com.yoon.project.repository.MemoryMemberRepository;
 
 //@Service
+@Transactional
 public class MemberService {
 
 	//private final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -40,7 +42,6 @@ public class MemberService {
 //		memberRepository.save(member);
 //		return member.getId();
 //	}
-	
 	
 	public Long join(Member member) {
 		validateDuplicateMember(member);//중복 회원 검증
